@@ -1,12 +1,9 @@
 
-
 provider "aws" {
   region = "eu-west-2"
 }
 
-
 data "aws_availability_zones" "available" {}
-
 locals {
   cluster_name = "ao-task-${random_string.suffix.result}"
 }
@@ -50,9 +47,9 @@ module "vpc" {
 
 #SECURITY-GROUPS
 
-resource "aws_security_group" "ao_task_sec_group_one" {
-  name   = "ao_task_worker_group_mgmt_one"
-  vpc_id = module.vpc.vpc_id
+resource "aws_security_group" "ao_task_worker_group_mgmt_one" {
+  name_prefix = "ao_task_worker_group_mgmt_one"
+  vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port = 22
@@ -64,9 +61,9 @@ resource "aws_security_group" "ao_task_sec_group_one" {
   }
 
 }
-resource "aws_security_group" "ao_task_security_group_two" {
-  name   = "ao_task_worker_group_mgmt_two"
-  vpc_id = module.vpc.vpc_id
+resource "aws_security_group" "ao_task_worker_group_mgmt_two" {
+  name_prefix = "ao_task_worker_group_mgmt_two"
+  vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port = 22
@@ -78,9 +75,9 @@ resource "aws_security_group" "ao_task_security_group_two" {
   }
 }
 
-resource "aws_security_group" "ao_task_security_group_three" {
-  name   = "ao_task_worker_group_mgmt_three"
-  vpc_id = module.vpc.vpc_id
+resource "aws_security_group" "ao_task_worker_group_mgmt_three" {
+  name_prefix = "ao_task_worker_group_mgmt_three"
+  vpc_id      = module.vpc.vpc_id
 
   ingress {
     from_port = 22
