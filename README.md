@@ -24,3 +24,9 @@ Initially my thinking was using a s3 bucket for the web page but the instruction
  
  ### kubernetes.tf 
 This file includes the kubernetes provider. 
+
+## Future Recommendations:
+
+. Using Remote State on s3.
+. Using Amazon ECS to run the dockerized web page.
+. Using ECR to store and manage containers.
