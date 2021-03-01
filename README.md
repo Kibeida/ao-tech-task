@@ -27,6 +27,6 @@ This file includes the kubernetes provider.
 
 ## Future Recommendations:
 
-. Using Remote State on s3.
-. Using Amazon ECS to run the dockerized web page.
-. Using ECR to store and manage containers.
+* Using Remote State on s3.
+* Using Amazon ECS to run the dockerized web page.
+* Using ECR to store and manage containers.
